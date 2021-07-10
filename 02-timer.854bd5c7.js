@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"d2uN":[function(require,module,exports) {
 "use strict";require("../css/common.css");
 },{"../css/common.css":"en75"}]},{},["d2uN"], null)
-//# sourceMappingURL=/parcel-project-template/02-timer.854bd5c7.js.map
+//# sourceMappingURL=/goit-js-hw-11/02-timer.854bd5c7.js.map

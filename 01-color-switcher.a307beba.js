@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"TCaP":[function(require,module,exports) {
 "use strict";require("../css/common.css");
 },{"../css/common.css":"en75"}]},{},["TCaP"], null)
-//# sourceMappingURL=/parcel-project-template/01-color-switcher.a307beba.js.map
+//# sourceMappingURL=/goit-js-hw-11/01-color-switcher.a307beba.js.map
