@@ -29,30 +29,37 @@ refs.dateSelectorEl.addEventListener('change', function (e) {
   }
 
   refs.startCountdown.disabled = false;
-
-  console.log(enteredDate);
 });
 
 refs.startCountdown.addEventListener('click', () => {
   refs.dateSelectorEl.disabled = true;
   refs.startCountdown.disabled = true;
+  setCurrentInterval();
 
   intervalId = setInterval(function () {
-    const curInterval = enteredDate - Date.now();
-
-    const { days, hours, minutes, seconds } = convertMs(curInterval);
-
-    refs.daysEl.innerHTML = days.toString().padStart(3, '0');
-    refs.hoursEl.innerHTML = hours.toString().padStart(2, '0');
-    refs.minutesEl.innerHTML = minutes.toString().padStart(2, '0');
-    refs.secondsEl.innerHTML = seconds.toString().padStart(2, '0');
-
+    const { days, hours, minutes, seconds } = setCurrentInterval();
     if (days + hours + minutes + seconds === 0) {
       clearInterval(intervalId);
       refs.dateSelectorEl.disabled = false;
     }
   }, TIMER_INTERVAL);
 });
+
+function setCurrentInterval() {
+  const curInterval = enteredDate - Date.now();
+
+  const curTimer = convertMs(curInterval);
+
+  setTimerElements(curTimer);
+  return curTimer;
+}
+
+function setTimerElements({ days, hours, minutes, seconds }) {
+  refs.daysEl.innerHTML = days.toString().padStart(3, '0');
+  refs.hoursEl.innerHTML = hours.toString().padStart(2, '0');
+  refs.minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+  refs.secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+}
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
