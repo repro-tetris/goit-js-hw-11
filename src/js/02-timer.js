@@ -1,5 +1,6 @@
 import '../css/common.css';
 import '../css/02-timer.scss';
+
 import Swal from 'sweetalert2';
 
 const TIMER_INTERVAL = 1000;
