@@ -35,7 +35,6 @@ refs.dateSelectorEl.addEventListener('change', function (e) {
 refs.startCountdown.addEventListener('click', () => {
   refs.dateSelectorEl.disabled = true;
   refs.startCountdown.disabled = true;
-  enteredDate = Date.now() + 5 * TIMER_INTERVAL;
 
   intervalId = setInterval(function () {
     const curInterval = enteredDate - Date.now();
